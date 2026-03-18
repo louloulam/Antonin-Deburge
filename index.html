@@ -44,8 +44,8 @@
     }
 
     nav.scrolled {
-      background: rgba(244, 241, 237, 0.9);
-      backdrop-filter: blur(10px);
+      background: rgba(244, 241, 237, 0.92);
+      backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--line);
     }
 
@@ -186,23 +186,16 @@
       letter-spacing: -0.01em;
     }
 
-    .divider {
-      border: none;
-      border-top: 1px solid var(--line);
-      margin: 0;
-    }
-
     /* ── EXPERTISES ──────────────────────────────────── */
     #expertises {
-      background: var(--stone);
       border-top: 1px solid var(--line);
     }
 
     .expertises-intro {
       max-width: 48rem;
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       color: var(--muted);
-      line-height: 1.8;
+      line-height: 1.85;
       margin-bottom: 5rem;
     }
 
@@ -241,7 +234,148 @@
     .expertise-desc {
       font-size: 0.82rem;
       color: var(--muted);
-      line-height: 1.85;
+      line-height: 1.9;
+    }
+
+    /* ── MAÎTRE ──────────────────────────────────────── */
+    #maitre {
+      border-top: 1px solid var(--line);
+      background: #f0ece6;
+    }
+
+    .maitre-grid {
+      display: grid;
+      grid-template-columns: 5fr 7fr;
+      gap: 7rem;
+      align-items: start;
+    }
+
+    .maitre-photo-wrap {
+      position: sticky;
+      top: 6rem;
+    }
+
+    .maitre-photo-frame {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      overflow: hidden;
+      background: #ddd6ce;
+      position: relative;
+    }
+
+    .maitre-photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      filter: grayscale(8%) contrast(1.04);
+      transition: transform 0.8s ease;
+    }
+
+    .maitre-photo-wrap:hover .maitre-photo-frame img {
+      transform: scale(1.02);
+    }
+
+    .maitre-photo-caption {
+      margin-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .maitre-photo-caption span {
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .maitre-photo-caption .accent-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .maitre-bio {
+      padding-top: 0.5rem;
+    }
+
+    .maitre-name-block {
+      margin-bottom: 3.5rem;
+    }
+
+    .maitre-title {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .maitre-fullname {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+    }
+
+    .maitre-fullname em {
+      font-style: italic;
+      color: var(--muted);
+    }
+
+    .maitre-quote {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-style: italic;
+      font-weight: 400;
+      line-height: 1.65;
+      color: var(--ink);
+      border-left: 2px solid var(--accent);
+      padding-left: 2rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .maitre-text {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 2.05;
+      margin-bottom: 1.4rem;
+    }
+
+    .maitre-parcours {
+      margin-top: 4rem;
+      padding-top: 3rem;
+      border-top: 1px solid var(--line);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem 4rem;
+    }
+
+    .parcours-item {}
+
+    .parcours-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+    }
+
+    .parcours-value {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 400;
+      line-height: 1.3;
+    }
+
+    .parcours-sub {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-top: 0.2rem;
     }
 
     /* ── CABINET ─────────────────────────────────────── */
@@ -258,10 +392,10 @@
 
     .cabinet-quote {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+      font-size: clamp(1.4rem, 2.2vw, 2rem);
       font-style: italic;
       font-weight: 400;
-      line-height: 1.5;
+      line-height: 1.55;
       color: var(--ink);
       border-left: 2px solid var(--accent);
       padding-left: 2.5rem;
@@ -269,7 +403,7 @@
     }
 
     .cabinet-body p {
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       color: var(--muted);
       line-height: 2;
       margin-bottom: 1.5rem;
@@ -294,7 +428,7 @@
 
     .cabinet-stat-value {
       font-family: 'Playfair Display', serif;
-      font-size: 1.6rem;
+      font-size: 1.5rem;
       font-weight: 400;
     }
 
@@ -305,11 +439,11 @@
 
     .confidentialite {
       margin-top: 3rem;
-      font-size: 0.65rem;
+      font-size: 0.62rem;
       letter-spacing: 0.15em;
       text-transform: uppercase;
       color: var(--muted);
-      opacity: 0.5;
+      opacity: 0.45;
     }
 
     /* ── CONTACT ─────────────────────────────────────── */
@@ -320,33 +454,31 @@
     }
 
     #contact .section-number { color: var(--accent); }
-    #contact .section-title { color: rgba(244, 241, 237, 0.95); }
+    #contact .section-title  { color: rgba(244, 241, 237, 0.95); }
 
     .contact-intro {
       font-size: 1rem;
-      color: rgba(244, 241, 237, 0.5);
+      color: rgba(244, 241, 237, 0.45);
       max-width: 38rem;
       margin-bottom: 5rem;
-      line-height: 1.8;
+      line-height: 1.85;
     }
 
     .contact-row {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 0;
       border-top: 1px solid rgba(244, 241, 237, 0.1);
     }
 
     .contact-item {
-      padding: 3rem 0;
+      padding: 3rem 3rem 3rem 0;
       border-right: 1px solid rgba(244, 241, 237, 0.1);
-      padding-right: 3rem;
-      padding-left: 0;
     }
 
     .contact-item:last-child {
       border-right: none;
       padding-left: 3rem;
+      padding-right: 0;
     }
 
     .contact-item:nth-child(2) {
@@ -363,10 +495,10 @@
 
     .contact-value {
       font-family: 'Playfair Display', serif;
-      font-size: 1.2rem;
+      font-size: 1.15rem;
       font-weight: 400;
       text-decoration: none;
-      color: rgba(244, 241, 237, 0.9);
+      color: rgba(244, 241, 237, 0.88);
       display: block;
       transition: color 0.3s;
     }
@@ -375,14 +507,110 @@
 
     .contact-address {
       font-size: 0.82rem;
-      color: rgba(244, 241, 237, 0.45);
-      line-height: 2;
+      color: rgba(244, 241, 237, 0.4);
+      line-height: 2.1;
+    }
+
+    /* ── FORM ────────────────────────────────────────── */
+    .contact-form-wrap {
+      margin-top: 5rem;
+      padding-top: 5rem;
+      border-top: 1px solid rgba(244, 241, 237, 0.08);
+    }
+
+    .contact-form-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 400;
+      font-style: italic;
+      color: rgba(244, 241, 237, 0.6);
+      margin-bottom: 3rem;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem 3rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .form-group.full {
+      grid-column: 1 / -1;
+    }
+
+    .form-group label {
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(244, 241, 237, 0.35);
+    }
+
+    .form-group input,
+    .form-group textarea {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(244, 241, 237, 0.15);
+      color: rgba(244, 241, 237, 0.85);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      font-size: 0.9rem;
+      padding: 0.8rem 0;
+      outline: none;
+      transition: border-color 0.3s;
+      resize: none;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-bottom-color: var(--accent);
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: rgba(244, 241, 237, 0.2);
+    }
+
+    .form-submit {
+      margin-top: 2.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .btn-submit {
+      background: transparent;
+      border: 1px solid rgba(244, 241, 237, 0.25);
+      color: rgba(244, 241, 237, 0.75);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 1rem 2.5rem;
+      cursor: pointer;
+      transition: border-color 0.3s, color 0.3s, background 0.3s;
+    }
+
+    .btn-submit:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .form-note {
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      color: rgba(244, 241, 237, 0.2);
     }
 
     /* ── FOOTER ──────────────────────────────────────── */
     footer {
       padding: 2.5rem 6vw;
-      border-top: 1px solid rgba(244, 241, 237, 0.08);
+      border-top: 1px solid rgba(244, 241, 237, 0.07);
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -390,27 +618,37 @@
     }
 
     footer span {
-      font-size: 0.7rem;
+      font-size: 0.68rem;
       letter-spacing: 0.08em;
-      color: rgba(244, 241, 237, 0.25);
+      color: rgba(244, 241, 237, 0.22);
     }
 
     /* ── RESPONSIVE ──────────────────────────────────── */
+    @media (max-width: 1060px) {
+      .maitre-grid { grid-template-columns: 1fr 1fr; gap: 5rem; }
+    }
+
     @media (max-width: 960px) {
       .expertise-list { grid-template-columns: repeat(2, 1fr); }
-      .cabinet-grid { grid-template-columns: 1fr; gap: 4rem; }
-      .contact-row { grid-template-columns: 1fr; }
-      .contact-item { border-right: none; border-bottom: 1px solid rgba(244, 241, 237, 0.1); padding-left: 0; padding-right: 0; }
-      .contact-item:last-child { border-bottom: none; }
+      .cabinet-grid   { grid-template-columns: 1fr; gap: 4rem; }
+      .maitre-grid    { grid-template-columns: 1fr; gap: 4rem; }
+      .maitre-photo-wrap { position: static; }
+      .maitre-photo-frame { aspect-ratio: 4 / 3; }
+      .contact-row    { grid-template-columns: 1fr; }
+      .contact-item   { border-right: none; border-bottom: 1px solid rgba(244,241,237,0.1); padding: 2.5rem 0; }
+      .contact-item:last-child { border-bottom: none; padding-left: 0; }
+      .contact-item:nth-child(2) { padding-left: 0; }
+      .form-grid      { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 640px) {
-      nav { padding: 1.2rem 5vw; }
-      .nav-links { gap: 1.5rem; }
-      .nav-links a { font-size: 0.7rem; }
-      .section { padding: 5rem 5vw; }
-      .expertise-list { grid-template-columns: 1fr; }
-      .hero-name { letter-spacing: -0.01em; }
+      nav              { padding: 1.2rem 5vw; }
+      .nav-links       { gap: 1.5rem; }
+      .nav-links a     { font-size: 0.68rem; }
+      .section         { padding: 5rem 5vw; }
+      .expertise-list  { grid-template-columns: 1fr; }
+      .maitre-parcours { grid-template-columns: 1fr; }
+      .hero-name       { letter-spacing: -0.01em; }
     }
   </style>
 </head>
@@ -421,6 +659,7 @@
     <a class="nav-brand" href="#hero">Antonin Deburge</a>
     <ul class="nav-links">
       <li><a href="#expertises">Expertises</a></li>
+      <li><a href="#maitre">Maître Deburge</a></li>
       <li><a href="#cabinet">Cabinet</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -484,10 +723,82 @@
     </div>
   </section>
 
+  <!-- MAÎTRE DEBURGE -->
+  <section id="maitre" class="section">
+    <div class="section-header">
+      <span class="section-number">02</span>
+      <h2 class="section-title">Maître<br/>Deburge</h2>
+    </div>
+
+    <div class="maitre-grid">
+
+      <!-- PHOTO -->
+      <div class="maitre-photo-wrap">
+        <div class="maitre-photo-frame">
+          <img
+            src="image maitre antonin deburge.jpg"
+            alt="Portrait de Maître Antonin Deburge, Avocat au Barreau de Paris"
+          />
+        </div>
+        <div class="maitre-photo-caption">
+          <span>Maître Antonin Deburge</span>
+          <div class="accent-dot"></div>
+          <span>Barreau de Paris</span>
+        </div>
+      </div>
+
+      <!-- BIOGRAPHIE -->
+      <div class="maitre-bio">
+        <div class="maitre-name-block">
+          <p class="maitre-title">Avocat au Barreau de Paris</p>
+          <h3 class="maitre-fullname">Antonin<br/><em>Deburge</em></h3>
+        </div>
+
+        <blockquote class="maitre-quote">
+          Le droit n'est pas une fin en soi — c'est l'instrument au service de vos ambitions et de vos intérêts.
+        </blockquote>
+
+        <p class="maitre-text">
+          Maître Antonin Deburge est avocat au Barreau de Paris. Après une formation d'excellence à l'Université Paris II Panthéon-Assas, il développe une pratique résolument tournée vers le droit des affaires et le conseil aux entreprises, aux dirigeants et aux familles d'entrepreneurs.
+        </p>
+        <p class="maitre-text">
+          Fort d'une expérience au sein de cabinets d'affaires parisiens de premier plan, il a forgé une expertise reconnue dans les domaines du droit des sociétés, du contentieux commercial et de l'arbitrage international. Sa maîtrise du droit français et du droit international lui permet d'accompagner ses clients dans des opérations complexes, quelle qu'en soit la dimension géographique.
+        </p>
+        <p class="maitre-text">
+          Maître Deburge privilégie une approche personnalisée : chaque dossier est traité avec la même exigence, qu'il s'agisse d'une restructuration d'envergure ou d'un contentieux délicat. Il s'attache à comprendre en profondeur les enjeux de ses clients pour leur apporter des solutions juridiques pragmatiques, efficaces et durables.
+        </p>
+
+        <div class="maitre-parcours">
+          <div class="parcours-item">
+            <p class="parcours-label">Formation</p>
+            <p class="parcours-value">Paris II Panthéon-Assas</p>
+            <p class="parcours-sub">Master Droit des affaires — mention très bien</p>
+          </div>
+          <div class="parcours-item">
+            <p class="parcours-label">Barreau</p>
+            <p class="parcours-value">Paris — CAPA</p>
+            <p class="parcours-sub">Ordre des Avocats de Paris</p>
+          </div>
+          <div class="parcours-item">
+            <p class="parcours-label">Langues</p>
+            <p class="parcours-value">Français · Anglais</p>
+            <p class="parcours-sub">Conseil et plaidoirie bilingues</p>
+          </div>
+          <div class="parcours-item">
+            <p class="parcours-label">Intervention</p>
+            <p class="parcours-value">Nationale &amp; Internationale</p>
+            <p class="parcours-sub">Arbitrage CCI · CMAP · ICC</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- CABINET -->
   <section id="cabinet" class="section">
     <div class="section-header">
-      <span class="section-number">02</span>
+      <span class="section-number">03</span>
       <h2 class="section-title">Le Cabinet</h2>
     </div>
 
@@ -498,10 +809,10 @@
         </blockquote>
         <div class="cabinet-body">
           <p>
-            Établi à Paris, le cabinet Antonin Deburge accompagne une clientèle d'entreprises, d'entrepreneurs et de particuliers dans la conduite de leurs affaires juridiques les plus sensibles. Chaque dossier est traité avec la rigueur qu'exigent des enjeux importants.
+            Établi au cœur de Paris, le cabinet Antonin Deburge accompagne une clientèle d'entreprises, d'entrepreneurs et de particuliers dans la conduite de leurs affaires juridiques les plus sensibles. Chaque dossier est traité avec la rigueur et la confidentialité qu'exigent des enjeux importants.
           </p>
           <p>
-            Fort d'une double formation en droit français et en droit international, Maître Deburge intervient en conseil stratégique comme en contentieux, en français et en anglais, devant les juridictions nationales et les instances arbitrales internationales.
+            Le cabinet intervient aussi bien en conseil stratégique qu'en contentieux, devant les juridictions nationales et les instances arbitrales internationales. Une réactivité sans compromis et une disponibilité réelle sont les piliers de la relation avec nos clients.
           </p>
         </div>
         <p class="confidentialite">Toutes les informations partagées avec le cabinet sont soumises au secret professionnel absolu</p>
@@ -509,24 +820,24 @@
 
       <div class="cabinet-detail">
         <div class="cabinet-stat">
-          <p class="cabinet-stat-label">Formation</p>
-          <p class="cabinet-stat-value">Paris II</p>
-          <p class="cabinet-stat-sub">Panthéon-Assas — Droit des affaires</p>
+          <p class="cabinet-stat-label">Siège</p>
+          <p class="cabinet-stat-value">Paris, 1er</p>
+          <p class="cabinet-stat-sub">16, avenue de l'Opéra</p>
         </div>
         <div class="cabinet-stat">
-          <p class="cabinet-stat-label">Langues</p>
-          <p class="cabinet-stat-value">FR · EN</p>
-          <p class="cabinet-stat-sub">Conseil et plaidoirie bilingues</p>
+          <p class="cabinet-stat-label">Disponibilité</p>
+          <p class="cabinet-stat-value">Lun – Ven</p>
+          <p class="cabinet-stat-sub">9h00 – 19h00, sur rendez-vous</p>
         </div>
         <div class="cabinet-stat">
-          <p class="cabinet-stat-label">Barreau</p>
-          <p class="cabinet-stat-value">Paris</p>
-          <p class="cabinet-stat-sub">Ordre des Avocats de Paris</p>
+          <p class="cabinet-stat-label">Première consultation</p>
+          <p class="cabinet-stat-value">Sur demande</p>
+          <p class="cabinet-stat-sub">En présentiel ou visioconférence</p>
         </div>
         <div class="cabinet-stat">
-          <p class="cabinet-stat-label">Intervention</p>
-          <p class="cabinet-stat-value">Nationale &amp; Internationale</p>
-          <p class="cabinet-stat-sub">Arbitrage international</p>
+          <p class="cabinet-stat-label">Honoraires</p>
+          <p class="cabinet-stat-value">Transparents</p>
+          <p class="cabinet-stat-sub">Taux horaire ou forfait selon la mission</p>
         </div>
       </div>
     </div>
@@ -535,12 +846,12 @@
   <!-- CONTACT -->
   <section id="contact" class="section">
     <div class="section-header">
-      <span class="section-number">03</span>
+      <span class="section-number">04</span>
       <h2 class="section-title">Prendre<br/>contact</h2>
     </div>
 
     <p class="contact-intro">
-      Pour toute demande de consultation ou d'information, Maître Deburge est disponible par courriel ou par téléphone du lundi au vendredi.
+      Pour toute demande de consultation ou d'information, Maître Deburge est disponible par courriel, par téléphone, ou via le formulaire ci-dessous.
     </p>
 
     <div class="contact-row">
@@ -557,9 +868,42 @@
         <p class="contact-address">
           16, avenue de l'Opéra<br/>
           75001 Paris — France<br/>
-          Lun – Ven, 9h – 18h
+          Lun – Ven, 9h – 19h
         </p>
       </div>
+    </div>
+
+    <!-- FORMULAIRE -->
+    <div class="contact-form-wrap">
+      <p class="contact-form-title">Ou écrivez-nous directement.</p>
+      <form class="form-grid" onsubmit="handleSubmit(event)">
+        <div class="form-group">
+          <label for="nom">Nom &amp; Prénom</label>
+          <input type="text" id="nom" name="nom" placeholder="Jean Dupont" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Adresse courriel</label>
+          <input type="email" id="email" name="email" placeholder="jean.dupont@exemple.fr" required />
+        </div>
+        <div class="form-group">
+          <label for="tel">Téléphone</label>
+          <input type="tel" id="tel" name="tel" placeholder="+33 6 00 00 00 00" />
+        </div>
+        <div class="form-group">
+          <label for="sujet">Objet</label>
+          <input type="text" id="sujet" name="sujet" placeholder="Droit des sociétés, contentieux…" />
+        </div>
+        <div class="form-group full">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Décrivez brièvement votre situation ou votre demande…" required></textarea>
+        </div>
+        <div class="form-group full">
+          <div class="form-submit">
+            <button type="submit" class="btn-submit">Envoyer le message</button>
+            <span class="form-note">Votre message est confidentiel et protégé par le secret professionnel.</span>
+          </div>
+        </div>
+      </form>
     </div>
   </section>
 
@@ -579,9 +923,19 @@
     // Scroll animations
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: 0.1, rootMargin: '0px 0px -80px 0px' });
+    }, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
 
     document.querySelectorAll('.section').forEach(s => observer.observe(s));
+
+    // Form submit (placeholder)
+    function handleSubmit(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('.btn-submit');
+      btn.textContent = 'Message envoyé —';
+      btn.style.color = '#c2855c';
+      btn.style.borderColor = '#c2855c';
+      btn.disabled = true;
+    }
   </script>
 </body>
 </html>
