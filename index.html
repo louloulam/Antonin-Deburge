@@ -43,7 +43,6 @@
       transition: background 0.5s ease, border-bottom 0.5s ease;
     }
 
-    /* Sur le hero vidéo : texte blanc */
     nav .nav-brand,
     nav .nav-links a {
       transition: color 0.5s ease, opacity 0.3s ease;
@@ -53,7 +52,6 @@
     nav.on-video .nav-links a { color: rgba(255,255,255,0.55); }
     nav.on-video .nav-links a:hover { color: rgba(255,255,255,0.95); }
 
-    /* Après le hero : fond stone avec blur */
     nav.scrolled {
       background: rgba(244, 241, 237, 0.92);
       backdrop-filter: blur(12px);
@@ -97,7 +95,6 @@
       overflow: hidden;
     }
 
-    /* Vidéo plein fond */
     .hero-video {
       position: absolute;
       inset: 0;
@@ -108,7 +105,6 @@
       z-index: 0;
     }
 
-    /* Overlay dégradé : léger en haut, plus dense en bas pour lisibilité du texte */
     .hero-overlay {
       position: absolute;
       inset: 0;
@@ -122,7 +118,6 @@
       );
     }
 
-    /* Tout le contenu du hero passe devant l'overlay */
     #hero > *:not(.hero-video):not(.hero-overlay) {
       position: relative;
       z-index: 2;
@@ -233,9 +228,7 @@
     }
 
     /* ── EXPERTISES ──────────────────────────────────── */
-    #expertises {
-      border-top: 1px solid var(--line);
-    }
+    #expertises { border-top: 1px solid var(--line); }
 
     .expertises-intro {
       max-width: 48rem;
@@ -340,7 +333,6 @@
     }
 
     .maitre-bio { padding-top: 0.5rem; }
-
     .maitre-name-block { margin-bottom: 3.5rem; }
 
     .maitre-title {
@@ -671,33 +663,17 @@
 
   <!-- HERO avec vidéo -->
   <section id="hero">
-
-    <!-- Vidéo arrière-plan -->
-    <video
-      class="hero-video"
-      src="video site antonin Deburge.mp4"
-      autoplay
-      muted
-      loop
-      playsinline
-      preload="auto"
-    ></video>
-
-    <!-- Overlay sombre dégradé -->
+    <video class="hero-video" src="video site antonin Deburge.mp4" autoplay muted loop playsinline preload="auto"></video>
     <div class="hero-overlay"></div>
-
-    <!-- Texte -->
     <div class="hero-content">
       <p class="hero-eyebrow">Avocat au Barreau de Paris</p>
       <h1 class="hero-name">Antonin<br/><em>Deburge</em></h1>
       <p class="hero-tagline">Conseil juridique d'entreprise et contentieux — une pratique fondée sur la rigueur, la discrétion et l'engagement.</p>
     </div>
-
     <div class="hero-scroll">
       <div class="hero-scroll-line"></div>
       <span>Défiler</span>
     </div>
-
   </section>
 
   <!-- EXPERTISES -->
@@ -706,11 +682,9 @@
       <span class="section-number">01</span>
       <h2 class="section-title">Domaines<br/>d'intervention</h2>
     </div>
-
     <p class="expertises-intro">
       Une pratique pluridisciplinaire au service des entreprises et des dirigeants, en conseil comme en contentieux, en France comme à l'international.
     </p>
-
     <div class="expertise-list">
       <div class="expertise-item">
         <p class="expertise-num">01</p>
@@ -751,15 +725,10 @@
       <span class="section-number">02</span>
       <h2 class="section-title">Maître<br/>Deburge</h2>
     </div>
-
     <div class="maitre-grid">
-
       <div class="maitre-photo-wrap">
         <div class="maitre-photo-frame">
-          <img
-            src="image maitre antonin deburge.jpg"
-            alt="Portrait de Maître Antonin Deburge, Avocat au Barreau de Paris"
-          />
+          <img src="image maitre antonin deburge.jpg" alt="Portrait de Maître Antonin Deburge, Avocat au Barreau de Paris" />
         </div>
         <div class="maitre-photo-caption">
           <span>Maître Antonin Deburge</span>
@@ -767,17 +736,14 @@
           <span>Barreau de Paris</span>
         </div>
       </div>
-
       <div class="maitre-bio">
         <div class="maitre-name-block">
           <p class="maitre-title">Avocat au Barreau de Paris</p>
           <h3 class="maitre-fullname">Antonin<br/><em>Deburge</em></h3>
         </div>
-
         <blockquote class="maitre-quote">
           Le droit n'est pas une fin en soi — c'est l'instrument au service de vos ambitions et de vos intérêts.
         </blockquote>
-
         <p class="maitre-text">
           Maître Antonin Deburge est avocat au Barreau de Paris. Après une formation d'excellence à l'Université Paris II Panthéon-Assas, il développe une pratique résolument tournée vers le droit des affaires et le conseil aux entreprises, aux dirigeants et aux familles d'entrepreneurs.
         </p>
@@ -787,7 +753,6 @@
         <p class="maitre-text">
           Maître Deburge privilégie une approche personnalisée : chaque dossier est traité avec la même exigence, qu'il s'agisse d'une restructuration d'envergure ou d'un contentieux délicat. Il s'attache à comprendre en profondeur les enjeux de ses clients pour leur apporter des solutions juridiques pragmatiques, efficaces et durables.
         </p>
-
         <div class="maitre-parcours">
           <div class="parcours-item">
             <p class="parcours-label">Formation</p>
@@ -811,7 +776,6 @@
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
@@ -821,7 +785,6 @@
       <span class="section-number">03</span>
       <h2 class="section-title">Le Cabinet</h2>
     </div>
-
     <div class="cabinet-grid">
       <div>
         <blockquote class="cabinet-quote">
@@ -837,7 +800,6 @@
         </div>
         <p class="confidentialite">Toutes les informations partagées avec le cabinet sont soumises au secret professionnel absolu</p>
       </div>
-
       <div class="cabinet-detail">
         <div class="cabinet-stat">
           <p class="cabinet-stat-label">Siège</p>
@@ -869,19 +831,17 @@
       <span class="section-number">04</span>
       <h2 class="section-title">Prendre<br/>contact</h2>
     </div>
-
     <p class="contact-intro">
       Pour toute demande de consultation ou d'information, Maître Deburge est disponible par courriel, par téléphone, ou via le formulaire ci-dessous.
     </p>
-
     <div class="contact-row">
       <div class="contact-item">
         <p class="contact-label">Courriel</p>
-        <a href="mailto:contact@antonin-deburge.fr" class="contact-value">contact@antonin-deburge.fr</a>
+        <a href="mailto:antonindeburge@gmail.com" class="contact-value">antonindeburge@gmail.com</a>
       </div>
       <div class="contact-item">
         <p class="contact-label">Téléphone</p>
-        <a href="tel:+33144000000" class="contact-value">+33 (0)1 44 00 00 00</a>
+        <a href="tel:+33609082265" class="contact-value">06 09 08 22 65</a>
       </div>
       <div class="contact-item">
         <p class="contact-label">Cabinet</p>
@@ -892,7 +852,6 @@
         </p>
       </div>
     </div>
-
     <div class="contact-form-wrap">
       <p class="contact-form-title">Ou écrivez-nous directement.</p>
       <form class="form-grid" onsubmit="handleSubmit(event)">
@@ -928,7 +887,7 @@
 
   <!-- FOOTER -->
   <footer>
-    <span>© 2025 Antonin Deburge — Avocat au Barreau de Paris</span>
+    <span>© 2026 Antonin Deburge — Avocat au Barreau de Paris</span>
     <span>Mentions légales</span>
   </footer>
 
@@ -936,7 +895,6 @@
     const nav = document.getElementById('nav');
     const heroEl = document.getElementById('hero');
 
-    // Gestion nav : blanc sur vidéo, stone après
     const heroObserver = new IntersectionObserver((entries) => {
       const inHero = entries[0].isIntersecting;
       nav.classList.toggle('on-video', inHero);
@@ -945,14 +903,12 @@
 
     heroObserver.observe(heroEl);
 
-    // Scroll animations sections
     const sectionObserver = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
 
     document.querySelectorAll('.section').forEach(s => sectionObserver.observe(s));
 
-    // Form submit
     function handleSubmit(e) {
       e.preventDefault();
       const btn = e.target.querySelector('.btn-submit');
