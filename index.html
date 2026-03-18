@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Antonin Deburge — Avocat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Montserrat:wght@200;300&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --ivoire: #faf8f5;
+      --brun: #2a2218;
+      --beige: #c8b8a8;
+      --beige-light: #e8ddd3;
+      --transition-slow: 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--ivoire);
+      color: var(--brun);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 200;
+      letter-spacing: 0.18em;
+      line-height: 1.9;
+      overflow-x: hidden;
+    }
+
+    /* ─── NAVIGATION ──────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      padding: 2.4rem 5vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: transparent;
+    }
+
+    nav .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 0.85rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--brun);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 4rem;
+    }
+
+    nav ul a {
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--brun);
+      opacity: 0.6;
+      transition: opacity 0.4s ease;
+    }
+
+    nav ul a:hover {
+      opacity: 1;
+    }
+
+    /* ─── SECTIONS BASE ───────────────────────────── */
+    section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 12rem 12vw;
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 1.4s ease, transform 1.4s ease;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .filet {
+      display: block;
+      width: 100%;
+      height: 1px;
+      background: var(--brun);
+      opacity: 0.15;
+      margin: 3rem 0;
+    }
+
+    .filet-court {
+      display: block;
+      width: 4rem;
+      height: 1px;
+      background: var(--beige);
+      margin: 2.5rem 0;
+    }
+
+    /* ─── SECTION ACCUEIL ─────────────────────────── */
+    #accueil {
+      align-items: center;
+      text-align: center;
+      padding-top: 0;
+    }
+
+    #accueil .surtitre {
+      font-size: 0.6rem;
+      letter-spacing: 0.45em;
+      text-transform: uppercase;
+      color: var(--beige);
+      margin-bottom: 3rem;
+    }
+
+    #accueil h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(3rem, 7vw, 7rem);
+      letter-spacing: 0.12em;
+      line-height: 1.1;
+      color: var(--brun);
+    }
+
+    #accueil .filet-accueil {
+      display: block;
+      width: 1px;
+      height: 6rem;
+      background: var(--beige);
+      margin: 4rem auto;
+    }
+
+    #accueil .tagline {
+      font-size: 0.65rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--beige);
+      opacity: 0.8;
+    }
+
+    /* ─── SECTION EXPERTISES ──────────────────────── */
+    #expertises {
+      border-top: 1px solid rgba(42, 34, 24, 0.08);
+    }
+
+    #expertises .section-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.45em;
+      text-transform: uppercase;
+      color: var(--beige);
+      margin-bottom: 5rem;
+    }
+
+    #expertises h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      letter-spacing: 0.08em;
+      margin-bottom: 5rem;
+      line-height: 1.3;
+    }
+
+    .expertises-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+
+    .expertise-item {
+      padding: 3rem 0;
+      border-bottom: 1px solid rgba(42, 34, 24, 0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .expertise-item:nth-child(odd) {
+      padding-right: 8vw;
+      border-right: 1px solid rgba(42, 34, 24, 0.1);
+    }
+
+    .expertise-item:nth-child(even) {
+      padding-left: 8vw;
+    }
+
+    .expertise-item .num {
+      font-size: 0.55rem;
+      letter-spacing: 0.3em;
+      color: var(--beige);
+    }
+
+    .expertise-item h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 1.3rem;
+      letter-spacing: 0.1em;
+    }
+
+    .expertise-item p {
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      color: var(--brun);
+      opacity: 0.55;
+      line-height: 2;
+    }
+
+    /* ─── SECTION CABINET ─────────────────────────── */
+    #cabinet {
+      background: var(--brun);
+      color: var(--ivoire);
+      border-top: none;
+    }
+
+    #cabinet .section-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.45em;
+      text-transform: uppercase;
+      color: var(--beige);
+      opacity: 0.6;
+      margin-bottom: 5rem;
+    }
+
+    #cabinet h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-style: italic;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      letter-spacing: 0.08em;
+      color: var(--ivoire);
+      line-height: 1.4;
+      max-width: 60rem;
+      margin-bottom: 4rem;
+    }
+
+    .filet-cabinet {
+      display: block;
+      width: 100%;
+      height: 1px;
+      background: var(--ivoire);
+      opacity: 0.1;
+      margin: 3rem 0;
+    }
+
+    #cabinet .cabinet-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+    }
+
+    #cabinet p {
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      line-height: 2.2;
+      color: var(--ivoire);
+      opacity: 0.65;
+    }
+
+    #cabinet .mention-confidentielle {
+      font-size: 0.55rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--beige);
+      opacity: 0.4;
+      margin-top: 4rem;
+    }
+
+    /* ─── SECTION CONTACT ─────────────────────────── */
+    #contact {
+      border-top: 1px solid rgba(42, 34, 24, 0.08);
+    }
+
+    #contact .section-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.45em;
+      text-transform: uppercase;
+      color: var(--beige);
+      margin-bottom: 5rem;
+    }
+
+    #contact h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      letter-spacing: 0.08em;
+      margin-bottom: 6rem;
+    }
+
+    .contact-blocs {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0;
+    }
+
+    .contact-bloc {
+      padding: 0 4rem 0 0;
+      border-right: 1px solid rgba(42, 34, 24, 0.1);
+      margin-right: 4rem;
+    }
+
+    .contact-bloc:last-child {
+      border-right: none;
+      margin-right: 0;
+      padding-right: 0;
+    }
+
+    .contact-bloc .label {
+      font-size: 0.55rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--beige);
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+
+    .contact-bloc a,
+    .contact-bloc span {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 1.1rem;
+      letter-spacing: 0.08em;
+      color: var(--brun);
+      text-decoration: none;
+      transition: opacity 0.4s ease;
+      display: block;
+    }
+
+    .contact-bloc a:hover {
+      opacity: 0.5;
+    }
+
+    .contact-bloc .adresse {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 200;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      line-height: 2;
+      opacity: 0.6;
+    }
+
+    /* ─── FOOTER ──────────────────────────────────── */
+    footer {
+      padding: 4rem 12vw;
+      border-top: 1px solid rgba(42, 34, 24, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    footer span {
+      font-size: 0.55rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--brun);
+      opacity: 0.3;
+    }
+
+    /* ─── SCROLL INDICATOR ────────────────────────── */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 3rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      opacity: 0.3;
+      animation: fadeInUp 3s ease 2s both;
+    }
+
+    .scroll-indicator span {
+      font-size: 0.5rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 3rem;
+      background: var(--brun);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.3; transform: scaleY(1); }
+      50% { opacity: 0.8; transform: scaleY(0.6); transform-origin: top; }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateX(-50%) translateY(12px); }
+      to { opacity: 0.3; transform: translateX(-50%) translateY(0); }
+    }
+
+    /* ─── RESPONSIVE ──────────────────────────────── */
+    @media (max-width: 900px) {
+      nav ul { gap: 2rem; }
+      section { padding: 8rem 8vw; }
+      .expertises-grid { grid-template-columns: 1fr; }
+      .expertise-item:nth-child(odd) { border-right: none; padding-right: 0; }
+      .expertise-item:nth-child(even) { padding-left: 0; }
+      #cabinet .cabinet-body { grid-template-columns: 1fr; gap: 3rem; }
+      .contact-blocs { grid-template-columns: 1fr; gap: 3rem; }
+      .contact-bloc { border-right: none; margin-right: 0; padding-right: 0; padding-bottom: 3rem; border-bottom: 1px solid rgba(42,34,24,0.1); }
+      .contact-bloc:last-child { border-bottom: none; }
+    }
+
+    @media (max-width: 600px) {
+      nav { padding: 2rem 6vw; }
+      nav ul { display: none; }
+      section { padding: 6rem 6vw; }
+      footer { flex-direction: column; gap: 1rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="#accueil" class="nav-logo">A. Deburge</a>
+    <ul>
+      <li><a href="#expertises">Expertises</a></li>
+      <li><a href="#cabinet">Cabinet</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ACCUEIL -->
+  <section id="accueil">
+    <p class="surtitre">Avocat au Barreau de Paris</p>
+    <h1>Antonin<br/>Deburge</h1>
+    <span class="filet-accueil"></span>
+    <p class="tagline">Conseil &amp; Contentieux &mdash; Droit des Affaires</p>
+    <div class="scroll-indicator">
+      <span>Défiler</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- EXPERTISES -->
+  <section id="expertises">
+    <span class="section-label">Domaines d'intervention</span>
+    <h2>Une pratique exigeante<br/>au service de vos intérêts</h2>
+
+    <div class="expertises-grid">
+      <div class="expertise-item">
+        <span class="num">01</span>
+        <h3>Droit des Sociétés</h3>
+        <p>Constitution, restructuration, fusion-acquisition, gouvernance d'entreprise et pactes d'actionnaires.</p>
+      </div>
+      <div class="expertise-item">
+        <span class="num">02</span>
+        <h3>Droit Commercial</h3>
+        <p>Contrats commerciaux, distribution, franchise, négociation et rédaction d'accords complexes.</p>
+      </div>
+      <div class="expertise-item">
+        <span class="num">03</span>
+        <h3>Contentieux des Affaires</h3>
+        <p>Représentation devant les juridictions civiles et commerciales, arbitrage international.</p>
+      </div>
+      <div class="expertise-item">
+        <span class="num">04</span>
+        <h3>Droit du Travail</h3>
+        <p>Relations individuelles et collectives, restructurations, contentieux prud'homal.</p>
+      </div>
+      <div class="expertise-item">
+        <span class="num">05</span>
+        <h3>Droit Immobilier</h3>
+        <p>Transactions, baux commerciaux, promotions immobilières et contentieux locatif.</p>
+      </div>
+      <div class="expertise-item">
+        <span class="num">06</span>
+        <h3>Droit Fiscal</h3>
+        <p>Optimisation fiscale, contrôle fiscal, restructurations patrimoniales et conseils en gestion de patrimoine.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CABINET -->
+  <section id="cabinet">
+    <span class="section-label">Le Cabinet</span>
+    <h2>&laquo;&nbsp;Une approche sur mesure,<br/>une discrétion absolue.&nbsp;&raquo;</h2>
+    <span class="filet-cabinet"></span>
+
+    <div class="cabinet-body">
+      <p>
+        Établi à Paris, le cabinet Antonin Deburge accompagne une clientèle d'entreprises, d'entrepreneurs et de particuliers dans la conduite de leurs affaires juridiques les plus sensibles. Chaque dossier est traité avec la rigueur et la confidentialité qu'exigent des enjeux importants.
+      </p>
+      <p>
+        Fort d'une double formation en droit français et en droit international, Maître Deburge intervient aussi bien en conseil stratégique qu'en contentieux, en français comme en anglais, devant les juridictions nationales et les instances arbitrales internationales.
+      </p>
+    </div>
+
+    <p class="mention-confidentielle">Toutes les informations partagées avec le cabinet sont soumises au secret professionnel</p>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <span class="section-label">Prendre contact</span>
+    <h2>Engager une première<br/>consultation</h2>
+
+    <div class="contact-blocs">
+      <div class="contact-bloc">
+        <span class="label">Courriel</span>
+        <a href="mailto:contact@antonin-deburge.fr">contact@antonin-deburge.fr</a>
+      </div>
+      <div class="contact-bloc">
+        <span class="label">Téléphone</span>
+        <a href="tel:+33144000000">+33 (0)1 44 00 00 00</a>
+      </div>
+      <div class="contact-bloc">
+        <span class="label">Cabinet</span>
+        <span class="adresse">
+          16, avenue de l'Opéra<br/>
+          75001 Paris<br/>
+          France
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span>© 2025 Antonin Deburge — Avocat au Barreau de Paris</span>
+    <span>Barreau de Paris &mdash; Ordre des Avocats</span>
+  </footer>
+
+  <script>
+    // Intersection Observer pour les animations au scroll
+    const sections = document.querySelectorAll('section');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.08,
+      rootMargin: '0px 0px -60px 0px'
+    });
+
+    sections.forEach(section => observer.observe(section));
+
+    // Première section visible immédiatement
+    document.querySelector('#accueil').classList.add('visible');
+
+    // Navigation : fond léger au scroll
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 80) {
+        nav.style.background = 'rgba(250, 248, 245, 0.92)';
+        nav.style.backdropFilter = 'blur(12px)';
+        nav.style.borderBottom = '1px solid rgba(42,34,24,0.06)';
+        nav.style.transition = 'background 0.6s ease, border 0.6s ease';
+      } else {
+        nav.style.background = 'transparent';
+        nav.style.backdropFilter = 'none';
+        nav.style.borderBottom = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
